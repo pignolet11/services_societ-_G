@@ -1,0 +1,33 @@
+A. Initialize the Git repository in your project folder using cmd use this commands:
+- git init
+- git add .
+- git commit -m "Initial commit with serverless function"
+
+B. Create a new repository on our GitHub account 
+C. Link our local repository to GitHub and push our code using the following commands:
+- git remote add origin https://github.com/"username"/"respiratory_name".git
+- git branch -M main
+- git push -u origin main
+
+D. Now let import and login to vercel
+- Log in to our Vercel Dashboard
+- Click on Add New... -> Project
+- Import our GitHub repository (your_respiratory_name).
+- In the configuration settings, leave the build settings as default (Vercel automatically detects static HTML files and the api/ folder as serverless functions).
+- Click Deploy. (Don't worry if it fails to send messages initially; we still need to add our environment variables next).
+
+D. Now lets Add our Environment Variables : To keep our tokens secure and hidden from GitHub, we add them directly inside Vercel:
+- We move to our deployed project dashboard on Vercel.
+- look for enviromental variable on the tab sidebar at the left, and selet it.
+- We then Add the following two variables:
+==== Key: TELEGRAM_TOKEN
+==== Value: (Paste your bot token here)
+Click Save, then repeat the process for:
+==== Key: TELEGRAM_CHAT_ID
+==== Value: (Paste your chat ID here)
+Click Save again ,  once done our serverless function will be able to read them securely via process.env.TELEGRAM_TOKEN
+
+E. Finally to apply our changes and enviromental variable onfigurations just redeploy Booom that DONE
+
+All rewards to @lovpeace11
+
